@@ -1,6 +1,7 @@
 package Stick::Role::Collection::HasFilters;
 use Moose::Role;
 use MooseX::Types::Moose qw(ArrayRef CodeRef);
+use namespace::autoclean -also => [ qw(ArrayRef CodeRef is_ArrayRef) ];
 
 # filters return true or false
 # an item is in the collection only if *all* filters return true

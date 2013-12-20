@@ -1,5 +1,6 @@
 package Stick::Role::HasCollection;
 # ABSTRACT: A class which owns a (routable) collection of objects
+use namespace::autoclean;
 use Stick::Types qw(Factory);
 use Stick::Util qw(class);
 use MooseX::Role::Parameterized;

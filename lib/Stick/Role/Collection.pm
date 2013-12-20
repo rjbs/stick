@@ -11,6 +11,7 @@ use Stick::Types qw(PositiveInt);
 use Stick::Util qw(ppack);
 use POSIX qw(ceil);
 use Scalar::Util qw(blessed);
+use namespace::autoclean -also => [ qw(Any ArrayRef Maybe is_Maybe Object Str is_Str Undef PositiveInt is_PositiveInt) ];
 
 require Stick::Publisher;
 use Stick::Publisher::Publish;
