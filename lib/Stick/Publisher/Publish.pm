@@ -22,6 +22,13 @@ sub publish {
 
   my $package = $caller->name;
 
+  # Throw an error if the method we're trying to publish already exists in the
+  # package to which we're trying to install. Moose's MOP will happily add a new
+  # method in that replaces the existing method of the same name.
+  if ($caller->has_method($name)) {
+    Stick::Error->throw("method '$name' already exists in package '$package'");
+  }
+
   my $sig = {};
   my $arg = {};
 
